@@ -12,11 +12,15 @@ function doSearch(word) {
 	// mediawiki api cannot meet the requirements, so download html page directly instead of use api.
 
 	// download page source
+	let pageUrl = website + wikiUrl + encodeURIComponent(word)
 	jQuery.ajax({  
-        url: website + wikiUrl + encodeURIComponent(word),  
+        url: pageUrl,  
         type: "GET",  
         success: function (data) {  
-			console.log(data);
+			let page = $(data);
+			let links = $("a", page).map(function() {
+                return this.pathname;
+            });
         },  
         dataType: "html"  
     }); 
