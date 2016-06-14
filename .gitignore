@@ -38,3 +38,4 @@ jspm_packages
 
 # osx files
 *.DS_Store
+.vscode/launch.json
