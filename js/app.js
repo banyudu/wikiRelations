@@ -55,14 +55,14 @@ function doSearch(word) {
 			for (let i = sortedResult.length - 1; i >= 0; i--) {
 				if (i in sortedResult) {
 					for (let items = sortedResult[i], j = items.length - 1; j >= 0; j--) {
-						$("#relations").append("<li><a class=\"relation\" href=\"#\">" 
+						$("#relations").append("<li><a class=\"relation\" href=\"#\">"
 							+ items[j] + "</a> : " + i + "</li>")
 					}
 				}
 			}
 
 			// bind onclick event
-			$(".relation").click(function() {
+			$(".relation").click(function () {
 				doSearch(this.text);
 			});
 		}
