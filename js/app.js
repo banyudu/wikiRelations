@@ -6,7 +6,9 @@ function doSearch(word) {
 
 	// set content of search bar
 	$("#content").val(word);
-	// return false to stop submit
+
+	// empty relations
+	$("#relations").empty();
 
 	// mediawiki api cannot meet the requirements, so download html page directly instead of use api.
 
@@ -67,5 +69,7 @@ function doSearch(word) {
 			});
 		}
 	});
+
+	// return false to stop submit
 	return false;
 }
