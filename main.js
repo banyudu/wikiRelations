@@ -1,3 +1,4 @@
+'use strict';
 const electron = require('electron')
 const {remote, Menu, MenuItem} = electron;
 const menuTpl = require('./js/menu')

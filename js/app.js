@@ -1,5 +1,5 @@
 // app.js
-
+'use strict';
 function doSearch(word) {
 	const website = "https://zh.wikipedia.org";
 	const wikiUrl = "/wiki/";
