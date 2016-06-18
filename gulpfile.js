@@ -43,3 +43,5 @@ gulp.task('build:windows', () => {
 });
 
 gulp.task('build', ['build:osx', 'build:linux', 'build:windows']);
+
+gulp.task('default', ['build']);
