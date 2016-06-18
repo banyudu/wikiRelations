@@ -1,3 +1,6 @@
+const electron = require('electron');
+const {app, Menu, shell} = electron;
+
 const menu = [
   {
     label: 'View',
@@ -42,15 +45,15 @@ const menu = [
     submenu: [
       {
         label: 'Learn More',
-        click() { require('electron').shell.openExternal('https://github.com/banyudu/wikiRelations'); }
+        click() { shell.openExternal('https://github.com/banyudu/wikiRelations'); }
       },
     ]
   },
 ];
 
 if (process.platform === 'darwin') {
-  const name = require('electron').remote.app.getName();
-  template.unshift({
+  const name = app.getName();
+  menu.unshift({
     label: name,
     submenu: [
       {
@@ -93,7 +96,7 @@ if (process.platform === 'darwin') {
     ]
   });
   // Window menu.
-  template[3].submenu = [
+  menu[3].submenu = [
     {
       label: 'Close',
       accelerator: 'CmdOrCtrl+W',
