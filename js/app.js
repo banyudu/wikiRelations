@@ -11,7 +11,10 @@ function doSearch(word) {
 	$("#content").val(word);
 
 	// empty graph
-//	svg.clear();
+	if (svg) {
+		svg.remove();
+		svg = null;
+	}
 
 	// mediawiki api cannot meet the requirements, so download html page directly instead of use api.
 
@@ -91,7 +94,10 @@ $("#searchBar").submit(function() {
 function drawGraph(nodes, links) {
 	let width = 500, height = 500;
 
-	svg.remove();
+	if (svg) {
+		svg.remove();
+		svg = null;
+	}
 
 	svg = d3.select("body")
 		.append("svg")
@@ -121,7 +127,7 @@ function drawGraph(nodes, links) {
 		.data(nodes)
 		.enter()
 		.append("circle")
-		.attr("r", 20)
+		.attr("r", function(d) { return d.size * 4; })
 		.style("fill", function(d, i) {
 			return color(i);
 		})
