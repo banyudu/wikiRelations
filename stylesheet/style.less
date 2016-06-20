@@ -3,7 +3,11 @@
 @title-color: black;
 
 // positons
-@body-margin: 30%;
+@body-margin: 8px;
+
+// svg
+@svg-width: 500px;
+@svg-height: 500px;
 
 h1 {
     color: @title-color;
@@ -13,4 +17,16 @@ h1 {
 body {
 	margin-left: @body-margin;
 	margin-right: @body-margin;
+}
+
+#svg {
+	width: @svg-width;
+	height: @svg-height;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#searchBar {
+	float: right;
 }
