@@ -59,13 +59,15 @@ function doSearch(word) {
 			let nodes = [{ "name": word, "size": 5 }];
 			let links = [];
 			let index = 1;
-			const maxSize = 20;
+			const maxSize = 5;
+			const maxCount = 30;
 			for (let item in result) {
 				if (result.hasOwnProperty(item)) {
-					nodes.push({ "name": item, "size": result[item] });
-					links.push({ "source": 0, "target": index, "value": result[item] });
+					let size = result[item] >= maxSize? maxSize: result[item];
+					nodes.push({ "name": item, "size": size });
+					links.push({ "source": 0, "target": index, "value": size });
 					index++;
-					if (index > maxSize)
+					if (index > maxCount)
 						break;
 				}
 			}
