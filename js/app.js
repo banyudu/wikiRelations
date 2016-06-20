@@ -73,3 +73,38 @@ function doSearch(word) {
 	// return false to stop submit
 	return false;
 }
+
+$(".relation").click(function () {
+	doSearch(this.text);
+});
+
+$("#searchBar").submit(function () {
+	return doSearch($("#content").val());
+});
+
+// init force layout
+let nodes = [];
+let edges = [];
+let force = d3.layout.force()
+	.nodes(nodes)
+	.links(edges)
+	.size([width, height])
+	.linkDistance(150)
+	.charge([-400]);
+force.start();
+
+force.on("tick", function () { //对于每一个时间间隔
+	//更新连线坐标
+	svg_edges.attr("x1", function (d) { return d.source.x; })
+		.attr("y1", function (d) { return d.source.y; })
+		.attr("x2", function (d) { return d.target.x; })
+		.attr("y2", function (d) { return d.target.y; });
+
+	//更新节点坐标
+	svg_nodes.attr("cx", function (d) { return d.x; })
+		.attr("cy", function (d) { return d.y; });
+
+	//更新文字坐标
+	svg_texts.attr("x", function (d) { return d.x; })
+		.attr("y", function (d) { return d.y; });
+});
