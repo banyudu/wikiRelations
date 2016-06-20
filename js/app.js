@@ -56,7 +56,7 @@ function doSearch(word) {
 				}
 			}
 
-			let nodes = [{ "name": word, "size": 10 }];
+			let nodes = [{ "name": word, "size": 5 }];
 			let links = [];
 			let index = 1;
 			const maxSize = 20;
@@ -127,7 +127,7 @@ function drawGraph(nodes, links) {
 		.data(nodes)
 		.enter()
 		.append("circle")
-		.attr("r", function(d) { return d.size * 4; })
+		.attr("r", function(d) { return d.size * 5; })
 		.style("fill", function(d, i) {
 			return color(i);
 		})
