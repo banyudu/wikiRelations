@@ -94,7 +94,7 @@ $("#searchBar").submit(function() {
 });
 
 function drawGraph(nodes, links) {
-	let width = 500, height = 500;
+	let width = 700, height = 400;
 
 	if (svg) {
 		svg.remove();
@@ -129,7 +129,7 @@ function drawGraph(nodes, links) {
 		.data(nodes)
 		.enter()
 		.append("circle")
-		.attr("r", function(d) { return d.size * 5; })
+		.attr("r", function(d) { return Math.sqrt(d.size) * 12; })
 		.style("fill", function(d, i) {
 			return color(i);
 		})
