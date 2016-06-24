@@ -20,3 +20,4 @@ If you are in China, you may want to use [cnpm](https://github.com/cnpm/cnpm) in
 1. [electron](https://github.com/electron/electron)
 2. [jQuery](https://github.com/jquery/jquery)
 3. [d3.js](https://github.com/d3/d3)
+4. [less.js](https://github.com/less/less.js)
