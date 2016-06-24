@@ -141,8 +141,9 @@ function drawGraph(nodes, links) {
 		.enter()
 		.append("text")
 		.style("fill", "black")
-		.attr("dx", 20)
-		.attr("dy", 8)
+		.attr("dx", 0)
+		.attr("dy", 0)
+	    .attr("text-anchor", "middle")
 		.text(function(d) {
 			return d.name;
 		});
