@@ -77,7 +77,7 @@ function doSearch(word) {
 
 			// bind onclick event
 			$(".relation").click(function() {
-				doSearch(this.text);
+				doSearch($(this).attr("text"));
 			});
 		}
 	});
@@ -131,6 +131,8 @@ function drawGraph(nodes, links) {
 		.enter()
 		.append("circle")
 		.attr("r", function(d) { return Math.sqrt(d.size) * 25; })
+	    .attr("class", "relation")
+	    .attr("text", function(d) { return d.name; })
 		.style("fill", function(d, i) {
 			return color(i);
 		})
