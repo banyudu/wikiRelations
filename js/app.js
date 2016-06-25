@@ -119,8 +119,8 @@ function drawGraph(nodes, links) {
 		.nodes(nodes)
 		.links(links)
 		.size([width, height])
-		.linkDistance(275)
-		.charge([-400]);
+		.linkDistance(225)
+		.charge(function(d) { return - d.size * d.size * 150; });
 	force.start();
 
 	let color = d3.scale.category20();
