@@ -2,6 +2,9 @@
 'use strict';
 
 let svg = $("#svg");
+const maxSize = 5;
+const maxCount = 15;
+
 
 function doSearch(word) {
 	const website = "https://zh.wikipedia.org";
@@ -59,8 +62,6 @@ function doSearch(word) {
 			let nodes = [{ "name": word, "size": 5 }];
 			let links = [];
 			let index = 1;
-			const maxSize = 5;
-			const maxCount = 30;
 			for (let item in result) {
 				if (result.hasOwnProperty(item)) {
 					let size = result[item] >= maxSize? maxSize: result[item];
@@ -94,7 +95,7 @@ $("#searchBar").submit(function() {
 });
 
 function drawGraph(nodes, links) {
-	let width = 700, height = 400;
+	let width = 900, height = 650;
 
 	if (svg) {
 		svg.remove();
@@ -118,7 +119,7 @@ function drawGraph(nodes, links) {
 		.nodes(nodes)
 		.links(links)
 		.size([width, height])
-		.linkDistance(150)
+		.linkDistance(275)
 		.charge([-400]);
 	force.start();
 
@@ -129,7 +130,7 @@ function drawGraph(nodes, links) {
 		.data(nodes)
 		.enter()
 		.append("circle")
-		.attr("r", function(d) { return Math.sqrt(d.size) * 12; })
+		.attr("r", function(d) { return Math.sqrt(d.size) * 25; })
 		.style("fill", function(d, i) {
 			return color(i);
 		})
