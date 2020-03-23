@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/banyudu/wikiRelations",
   "devDependencies": {
-    "electron-packager": "^7.0.4",
+    "electron-packager": "^14.2.1",
     "electron-prebuilt": "^1.2.3",
     "gulp": "^3.9.1"
   },
