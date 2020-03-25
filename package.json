@@ -28,6 +28,6 @@
     "gulp": "^3.9.1"
   },
   "dependencies": {
-    "jslint": "^0.10.1"
+    "jslint": "^0.12.1"
   }
 }
